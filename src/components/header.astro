@@ -3,15 +3,25 @@
 import '../styles/global.css';
 ---
 
-<header class=" md:max-w-2/3 ml-6 md:mx-auto h-16 flex justify-between text-neutral-50 mt-6 rounded-lg">
+<header class=" md:max-w-2/3 ml-6 md:mx-auto h-16 flex justify-between text-neutral-50 mt-6 rounded-lg" style="background-color: #211e20;">
     
-    <div class="flex py-4 ">
+    <div class="flex pt-5 ">
         
-    <h1 class="py-2">Desarrollador <strong class="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-lg">Chethh</strong></h1>
+    <h1 class=" pl-4 text-neutral-100">Desarrollador <strong class="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-lg">Chethh</strong></h1>
     </div>
     <nav class="p-4 flex items-center gap-4">
-    <a class="hover:bg-slate-400 p-2 px-3 rounded-2xl text-indigo-700 font-medium hover:text-slate-900 cursor-pointer" href="">sobre mi</a>
-    <a class="hover:bg-slate-400 p-2 px-3 rounded-2xl text-indigo-700 font-medium hover:text-slate-900 cursor-pointer" href="">proyectos</a>
-    <a class="hover:bg-slate-400 p-2 px-3 rounded-2xl text-indigo-700 font-medium hover:text-slate-900 cursor-pointer" href="">contacto</a>
+    <a href="#sobreMi" class="nav-link p-2 px-3 rounded-2xl  font-medium hover:text-[#211e20] cursor-pointer" href="" >sobre mi</a>
+    <a class="nav-link p-2 px-3 rounded-2xl  font-medium hover:text-[#211e20] cursor-pointer" href="" >proyectos</a>
+    <a href="#contactoo" class="nav-link p-2 px-3 rounded-2xl  font-medium hover:text-[#211e20] cursor-pointer" href="" >contacto</a>
     </nav>
 </header>
+<style>
+    .nav-link{
+        color: #e9efec; /* Cambia el color del texto si quieres */
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .nav-link:hover {
+        background-color: #a0a08b;
+        color: #211e20; /* Cambia el color del texto si quieres */
+    }
+</style>

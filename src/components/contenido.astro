@@ -3,15 +3,25 @@ import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 ---
 <main class="text-neutral-50 mt-8 rounded-lg " >
-	<div class="md:max-w-2/3 md:mx-auto mx-6">
-		<section>
-			<h1>Sobre mi</h1>
-			<p>Desarrollador fullstack con experiencia en diversas tecnologías.</p>
-			<p>Apasionado por crear soluciones eficientes y escalables, siempre aprendiendo y mejorando mis habilidades.</p>
-            
+	<div class="sobreMi md:max-w-2/3 md:mx-auto mx-6" id="sobreMi">
+		<section class="max-w-3/4 mx-auto">
+			<div class="flex flex-row items-center justify-around text-justify p-4 text-lg">
+			<div class="w-1/2 items-start">
+				<h1>Sobre mi</h1>
+				<p>Desarrollador fullstack junior con experiencia en diversas tecnologías por más de 1 año de experiencia. 
+				Apasionado por crear soluciones eficientes y escalables, siempre aprendiendo y mejorando mis habilidades
+				Ademas de contar con un alto nivel de ingles</p>
+			</div>
+			<div class="w-1/2 flex items-end justify-end">
+			<img src="/miImage.png" alt="" class="rounded-full object-cover h-60 w-60 " />
+			</div>
+			</div>
 		</section>
 	</div>
-	<div class=" py-4 bg-neutral-100 w-full my-4 ">
+	<div class=" md:max-w-2/3 md:mx-auto mx-6">
+	<h6 class=" mt-4">Tecnologías que manejo</h6>
+	</div>
+	<div class=" py-4  w-full my-4 "style="background-color: #eaf0d8;">
 		<div class=" grid grid-cols-3 md:grid-cols-6 gap-4 md:max-w-2/3 md:mx-auto mx-4 justify-items-center items-center">
 				<img class="w-12 h-12 object-contain" src="/reactP.png" alt="react" />
 				<img class="w-12 h-12 object-contain" src="/angularP.png" alt="angular" />
@@ -29,12 +39,160 @@ import background from '../assets/background.svg';
 	</div>
 	<div class="md:max-w-2/3 md:mx-auto mx-6">
 		<section>
-			Trabajos
+			<h2 class="p-3">Trabajos</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div class="rounded-2xl border-neutral-50 border-2 p-3  " ><p class="pb-2 " >To-do List</p>
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 cursor-pointer">
+						
+					<a href="https://github.com/ChethhSito/To-do_front" target="_blank" rel="noopener noreferrer" class="block max-w-md mx-auto bg-white rounded-xl shadow hover:shadow-lg transition" style="background-color: #61b8ae;">
+						<div class="p-5">
+							<h3 class="text-xl font-bold text-neutral-800 mb-2">
+							To-do_front
+							</h3>
+							<p class="text-neutral-700 text-sm mb-4">
+							Aplicación de tareas simple usando React para manejar tus tareas.
+							</p>
+							<div class="flex items-center justify-between text-sm text-black">
+							<span>🌐 Next.js | TypeScript</span>
+							
+							</div>
+						</div>
+					</a>
+					
+						<a href=" https://github.com/ChethhSito/To-do_back" target="_blank" rel="noopener noreferrer" class="block max-w-md mx-auto bg-white  rounded-xl shadow hover:shadow-lg transition" style="background-color: #dde0bd;">
+							<div class="p-5">
+								<h4 class="text-xl font-bold text-neutral-800 mb-2">
+									To-do_Back
+								</h4>
+								<p class="text-neutral-700 text-sm mb-4">Aplicación de tareas simple usando Node.js para manejar la lógica del servidor.</p>
+								<div class="flex items-center justify-between text-sm text-black">
+									<span>🌐 Nest.js | TypeScript</span>
+									
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="rounded-2xl border-neutral-50 border-2 p-3">
+					<p class="pb-2">Calculadora y App musica</p>
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 cursor-pointer">
+					<a href="https://github.com/ChethhSito/To-do_front" target="_blank" rel="noopener noreferrer" 
+					class="block max-w-md mx-auto bg-white rounded-xl shadow hover:shadow-lg transition" style="background-color: #8b9525;">
+						<div class="p-5">
+							<h3 class="text-xl font-bold text-neutral-800 mb-2">
+							Calculadora
+							</h3>
+							<p class="text-neutral-700 text-sm mb-4">
+							Calculadora usando una libreria basica de javascript (math.js) con estilo minimalista.
+							</p>
+							<div class="flex items-center justify-between text-sm text-black">
+							<span>🌐 HTML, CSS, JavaScript</span>
+							
+							</div>
+						</div>
+					</a>
+					
+					<a href="https://github.com/ChethhSito/To-do_front" target="_blank" rel="noopener noreferrer" 
+					class="block max-w-md mx-auto bg-white rounded-xl shadow hover:shadow-lg transition" style="background-color: #eed7ac;">
+						<div class="p-5">
+							<h3 class="text-xl font-bold text-neutral-800 mb-2">
+							Sonantia
+							</h3>
+							<p class="text-neutral-700 text-sm mb-4">
+							App de musica usando una libreria de audio con estilo minimalista y responsive basada en spotify.
+							</p>
+							<div class="flex items-center justify-between text-sm text-black">
+							<span>🌐 Angular</span>
+							
+							</div>
+						</div>
+					</a>
+					</div>
+				</div>
+				
+				
+			</div>
+			<div class="rounded-2xl border-neutral-50 border-2 p-3 cursor-pointer mt-4">
+			<p class="pb-2">MicroServicios de gestion de usuarios y direcciones</p>
+					<div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 cursor-pointer">
+					<a href="https://github.com/ChethhSito/directionServiceOracle" target="_blank" rel="noopener noreferrer" 
+					class="block max-w-md mx-auto bg-white rounded-xl shadow hover:shadow-lg transition" style="background-color:#f49b57;">
+						<div class="p-5">
+							<h3 class="text-xl font-bold text-neutral-800 mb-2">
+							MicroServicio Direcciones
+							</h3>
+							<p class="text-neutral-700 text-sm mb-4">
+							Microservicio de gestion de direcciones usando una base de datos Oracle.
+							</p>
+							<div class="flex items-center justify-between text-sm text-black">
+							<span>🌐 HTML, CSS, JS, Spring Boot, Java</span>
+							
+							</div>
+						</div>
+					</a>
+					<a href="https://github.com/ChethhSito/clientServiceOracle" target="_blank" rel="noopener noreferrer" 
+					class="block max-w-md mx-auto bg-white rounded-xl shadow hover:shadow-lg transition" style="background-color: #853c6e;">
+						<div class="p-5">
+							<h3 class="text-xl font-bold text-neutral-900 mb-2">
+							MicroServicio Clientes
+							</h3>
+							<p class="text-neutral-200 text-sm mb-4">
+							Microservicio de gestion de clientes usando una base de datos Oracle.
+							</p>
+							<div class="flex items-center justify-between text-sm text-black">
+							<span>🌐 HTML, CSS, JS, Spring Boot, Java</span>
+							
+							</div>
+						</div>
+					</a>
+					<a href="https://github.com/ChethhSito/nextJsWebReact" target="_blank" rel="noopener noreferrer" 
+					class="block max-w-md mx-auto bg-white rounded-xl shadow hover:shadow-lg transition" style="background-color:#6c0122;">
+						<div class="p-5">
+							<h3 class="text-xl font-bold text-neutral-300 mb-2">
+							Frontend Crud
+							</h3>
+							<p class="text-neutral-200 text-sm mb-4">
+							Aplicación web de gestion de clientes y direcciones usando Next.js y React con apis.
+							</p>
+							<div class="flex items-center justify-between text-sm text-white">
+							<span>🌐 Next.js | React</span>
+							
+							</div>
+						</div>
+					</a>
+					<a href="https://github.com/yKoutl/Backend-Mongo" target="_blank" rel="noopener noreferrer" 
+					class="block max-w-md mx-auto bg-white rounded-xl shadow hover:shadow-lg transition" style="background-color:#1e0638;">
+						<div class="p-5">
+							<h3 class="text-xl font-bold text-neutral-300 mb-2">
+							Backend crud
+							</h3>
+							<p class="text-neutral-200 text-sm mb-4">
+							Servicio de gestion de clientes y direcciones usando Express.js, Swagger para acceso publico y MongoDB.
+							</p>
+							<div class="flex items-center justify-between text-sm text-white">
+							<span>🌐 Express.js | Node.js</span>
+							
+							</div>
+						</div>
+					</a>
+					</div>	
+					
+			</div>
 		</section>
 	</div>
-	<div class="md:max-w-2/3 md:mx-auto mx-6">
+	<div class="contactoo md:max-w-2/3 md:mx-auto mx-6" id="contactoo">
 		<section>
-			Contacto
+			<h3 class="pt-8 pl-3">Contacto</h3>
+			<p class="px-3">Si deseas contactarme, puedes enviarme un correo a: </p>
+			<a class="text-blue-500 px-3" href="https://mail.google.com/mail/?view=cm&to=davidhuwork1@gmail.com">davidhuwork1@gmail.com</a>
+			<p class="px-3 pb-3">O seguirme en mis redes sociales:</p>
+			<div class="flex gap-4 px-3 pb-8">
+				<a href="https://github.com/ChethhSito"><i class="fa-brands fa-github fa-2x cursor-pointer"></i></a>
+				<a href="https://www.linkedin.com/in/juan-david-huayta-ortega-03b05b344/"><i class="fa-brands fa-linkedin fa-2x cursor-pointer"></i></a>
+				<a href="https://www.instagram.com/dev_chethh/"><i class="fa-brands fa-instagram fa-2x cursor-pointer"></i></a>
+				<a href=""><i class="fa-brands fa-whatsapp fa-2x cursor-pointer"></i></a>
+				<a href="https://open.spotify.com/user/21lxpleu5oxb5kihekbabsdnq?si=ce774dc21bc94b0a"><i class="fa-brands fa-spotify fa-2x cursor-pointer"></i></a>
+				<a href="https://steamcommunity.com/id/tengohambredamepizza/"><i class="fa-brands fa-steam fa-2x cursor-pointer"></i></a>
 		</section>
 	</div>
 </main>
