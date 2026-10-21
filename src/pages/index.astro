@@ -1,130 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const projects = [
-  {
-    category: 'Producto web · Full stack',
-    title: 'Mesa Viva',
-    description: 'Sistema de pedidos por QR para restaurantes: carta por mesa, pedidos y cuenta del cliente junto a un panel para cocina, sala y caja.',
-    detail: 'MVP funcional en entorno local con validación de precios en el servidor y operaciones de pedidos y pagos.',
-    stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL'],
-    links: [{ label: 'Repositorio', url: 'https://github.com/ChethhSito/mesaViva' }],
-    tone: 'mint',
-  },
-  {
-    category: 'Backend · Finanzas simuladas',
-    title: 'BankCore',
-    description: 'API educativa de cuentas y transferencias internas simuladas, enfocada en consistencia contable, idempotencia y trazabilidad.',
-    detail: 'Ledger de doble partida, auditoría, documentación de API y pruebas con PostgreSQL.',
-    stack: ['Java', 'Spring Boot', 'PostgreSQL', 'REST'],
-    links: [{ label: 'Repositorio', url: 'https://github.com/ChethhSito/CoreBanquitos' }],
-    tone: 'blue',
-  },
-  {
-    category: 'Plataforma institucional · Full stack',
-    title: 'Sistema académico SFA',
-    description: 'Portal e intranet para procesos de admisión, matrícula y gestión académica con módulos para distintos roles institucionales.',
-    detail: 'Interfaz modular conectada a una API REST; repositorios separados para frontend y backend.',
-    stack: ['React', 'TypeScript', 'NestJS', 'MongoDB'],
-    links: [
-      { label: 'Frontend', url: 'https://github.com/ChethhSito/SFA-Frontend' },
-      { label: 'Backend', url: 'https://github.com/ChethhSito/SFA-Backend' },
-    ],
-    tone: 'peach',
-  },
-  {
-    category: 'Mapas · Full stack',
-    title: 'Huarique Maps',
-    description: 'Proyecto web para explorar huariques mediante una interfaz de mapas y servicios para usuarios, establecimientos y sugerencias.',
-    detail: 'Interfaz React con Leaflet y backend NestJS organizado por módulos.',
-    stack: ['React', 'Leaflet', 'NestJS', 'MongoDB'],
-    links: [
-      { label: 'Frontend', url: 'https://github.com/ChethhSito/HuariqueMapsFront' },
-      { label: 'Backend', url: 'https://github.com/ChethhSito/HuariqueMapsBack' },
-    ],
-    tone: 'lavender',
-  },
-  {
-    category: 'Seguridad · Análisis estático',
-    title: 'Laboratorio Semgrep',
-    description: 'Aplicación Flask de enseñanza con ejemplos intencionales de SQL injection y XSS, reglas propias y correcciones comparables.',
-    detail: 'Escaneos reproducibles, pruebas funcionales, reporte HTML e integración con GitHub Actions.',
-    stack: ['Python', 'Flask', 'Semgrep', 'GitHub Actions'],
-    links: [{ label: 'Repositorio', url: 'https://github.com/ChethhSito/Seguridad---Grupo3' }],
-    tone: 'yellow',
-  },
-];
-
-const skills = [
-  { group: 'Desarrollo web', list: 'React · Next.js · TypeScript · JavaScript · Node.js · APIs REST' },
-  { group: 'Móvil y datos', list: 'React Native / Expo · Flutter · SQL · PostgreSQL · MongoDB · Supabase' },
-  { group: 'Herramientas', list: 'Git / GitHub · Figma · Jira · Power BI · OJS' },
+const extra = [
+  { title: 'Sistema académico SFA', kind: 'Plataforma institucional', text: 'Portal e intranet para admisión, matrícula y gestión académica con distintos roles.', tech: 'React · TypeScript · NestJS · MongoDB', links: [{label:'Frontend',href:'https://github.com/ChethhSito/SFA-Frontend'},{label:'Backend',href:'https://github.com/ChethhSito/SFA-Backend'}] },
+  { title: 'Huarique Maps', kind: 'Exploración local', text: 'Mapa para descubrir huariques con servicios para usuarios, establecimientos y sugerencias.', tech: 'React · Leaflet · NestJS · MongoDB', links: [{label:'Frontend',href:'https://github.com/ChethhSito/HuariqueMapsFront'},{label:'Backend',href:'https://github.com/ChethhSito/HuariqueMapsBack'}] },
+  { title: 'Laboratorio Semgrep', kind: 'Seguridad de software', text: 'Ejemplos comparables de SQL injection y XSS, reglas propias, escaneos y correcciones.', tech: 'Python · Flask · Semgrep · GitHub Actions', links: [{label:'Repositorio',href:'https://github.com/ChethhSito/Seguridad---Grupo3'}] },
 ];
 ---
-
 <Layout>
   <header class="site-header wrap">
-    <a class="brand" href="#inicio" aria-label="Juan David Huayta Ortega, ir al inicio"><span class="brand-mark">JD</span><span>Juan David<span class="brand-dot">.</span></span></a>
-    <nav aria-label="Navegación principal">
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#proyectos">Proyectos</a>
-      <a class="nav-contact" href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
-    </nav>
+    <a class="wordmark" href="#inicio" aria-label="Juan David Huayta Ortega, inicio">Juan David.</a>
+    <nav aria-label="Navegación principal"><a href="#proyectos">Proyectos</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a></nav>
   </header>
-
   <main id="inicio">
     <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Ingeniería Informática · Lima, Perú</p>
-        <h1 id="hero-title">Construyo productos digitales <em>útiles y claros.</em></h1>
-        <p class="hero-lead">Soy <strong>Juan David Huayta Ortega</strong>, estudiante de Ingeniería Informática y desarrollador full stack. Trabajo en aplicaciones web y móviles, desde la interfaz hasta los servicios y datos que las sostienen.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#proyectos">Explorar proyectos <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="mailto:davidhuwork1@gmail.com">Escribirme <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-facts"><span>10.º ciclo · Universidad Ricardo Palma</span><span>Tercio superior</span></div>
-      </div>
-      <div class="portrait-panel">
-        <div class="portrait-frame"><img src="/miImage.png" alt="Retrato de Juan David Huayta Ortega" width="542" height="570" fetchpriority="high" /></div>
-        <div class="portrait-caption"><span>DESARROLLO WEB + MÓVIL</span><span>JDH / 2026</span></div>
-      </div>
+      <div><h1 id="hero-title"><span>Juan David</span><span>Huayta Ortega<span class="hero-period">.</span></span></h1></div>
+      <div class="hero-bottom"><p>Desarrollador full stack en Lima. Creo aplicaciones web y móviles con React, NestJS, Flutter y bases de datos.</p><div class="hero-actions"><a class="button primary" href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a><a class="button quiet" href="mailto:davidhuwork1@gmail.com">Escribirme <span aria-hidden="true">↗</span></a></div></div>
     </section>
-
-    <section id="sobre-mi" class="intro-section section-pad">
-      <div class="wrap intro-grid">
-        <div><p class="section-kicker">01 / PERFIL</p><h2>Una base técnica con enfoque en personas.</h2></div>
-        <div class="intro-text"><p>Curso el décimo ciclo de Ingeniería Informática en la Universidad Ricardo Palma y pertenezco al tercio superior. Mi experiencia combina desarrollo full stack con soporte técnico para la publicación de una revista científica.</p><p>Me interesa construir soluciones que se puedan explicar, mantener y usar: interfaces cuidadas, APIs bien definidas y flujos de trabajo que respondan a necesidades reales.</p></div>
-      </div>
-    </section>
-
-    <section id="experiencia" class="experience section-pad wrap" aria-labelledby="experience-title">
-      <div class="section-heading"><div><p class="section-kicker">02 / TRAYECTORIA</p><h2 id="experience-title">Experiencia</h2></div><p>Trabajo aplicado en producto digital y operaciones editoriales.</p></div>
-      <div class="experience-list">
-        <article class="experience-item"><div class="experience-date">NOV 2025 — ACTUALIDAD</div><div><h3>Desarrollador full stack</h3><p class="experience-org">Nos Planet S.A.C. · Remoto</p><p>Desarrollo de frontend, backend, bases de datos, APIs REST y lógica de negocio para un sistema que conecta a personas con recicladores de materiales inorgánicos. Trabajo móvil con React Native/Expo y Flutter.</p></div><span class="experience-index">01</span></article>
-        <article class="experience-item"><div class="experience-date">ABR 2026 — ACTUALIDAD</div><div><h3>Soporte técnico y OJS</h3><p class="experience-org">Revista INICIB · Universidad Ricardo Palma</p><p>Carga de artículos, documentos y metadatos científicos en Open Journal Systems. Preparación y publicación de un número trimestral mediante el flujo editorial de OJS.</p></div><span class="experience-index">02</span></article>
-      </div>
-    </section>
-
-    <section id="proyectos" class="projects-section section-pad" aria-labelledby="projects-title">
-      <div class="wrap">
-        <div class="section-heading"><div><p class="section-kicker">03 / TRABAJO SELECCIONADO</p><h2 id="projects-title">Proyectos que muestran cómo trabajo</h2></div><p>Una selección de repositorios con distintos problemas, tecnologías y alcances.</p></div>
-        <div class="projects-grid">
-          {projects.map((project, index) => <article class={`project-card tone-${project.tone}`}>
-            <div class="project-visual" aria-hidden="true"><div class="visual-topline"><span>{String(index + 1).padStart(2, '0')} / PROYECTO</span><span>↗</span></div><strong>{project.title}</strong><div class="visual-bars"><i></i><i></i><i></i></div></div>
-            <div class="project-content"><p class="project-category">{project.category}</p><h3>{project.title}</h3><p class="project-description">{project.description}</p><p class="project-detail">{project.detail}</p><ul class="stack-list" aria-label={`Tecnologías de ${project.title}`}>{project.stack.map((item) => <li>{item}</li>)}</ul><div class="project-links">{project.links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div></div>
-          </article>)}
-        </div>
-        <p class="more-projects">Más trabajo y código en <a href="https://github.com/ChethhSito" target="_blank" rel="noopener noreferrer">mi perfil de GitHub <span aria-hidden="true">↗</span></a></p>
-      </div>
-    </section>
-
-    <section id="habilidades" class="skills-section section-pad wrap" aria-labelledby="skills-title">
-      <div class="section-heading"><div><p class="section-kicker">04 / HERRAMIENTAS</p><h2 id="skills-title">Tecnologías y formación</h2></div></div>
-      <div class="skills-grid"><div class="skill-groups">{skills.map((skill) => <div class="skill-row"><h3>{skill.group}</h3><p>{skill.list}</p></div>)}</div><aside class="education-card"><span>FORMACIÓN</span><h3>Ingeniería Informática</h3><p>Universidad Ricardo Palma · 2022–2027 (previsto)</p><p>Décimo ciclo · tercio superior</p><div class="education-divider"></div><span>IDIOMAS</span><p>Español nativo · Inglés avanzado 6 completado en Británico</p></aside></div>
-    </section>
-
-    <section id="contacto" class="contact-section section-pad"><div class="wrap contact-grid"><div><p class="section-kicker">05 / CONTACTO</p><h2>¿Conversamos sobre tu próximo proyecto?</h2><p>Estoy abierto a oportunidades de desarrollo de software y a colaborar en productos web o móviles.</p></div><div class="contact-links"><a class="contact-email" href="mailto:davidhuwork1@gmail.com">davidhuwork1@gmail.com <span aria-hidden="true">↗</span></a><a href="https://github.com/ChethhSito" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/juan-david-huayta-ortega-03b05b344/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div></section>
+    <section id="sobre-mi" class="about section-space" aria-labelledby="about-title"><div class="wrap about-layout">
+      <div class="portrait"><img src="/miImage.png" alt="Retrato de Juan David Huayta Ortega" width="542" height="570" loading="lazy" /></div>
+      <div><h2 id="about-title">Entre la interfaz y lo que la hace funcionar.</h2><p>Curso el décimo ciclo de Ingeniería Informática en la Universidad Ricardo Palma y pertenezco al tercio superior. Trabajo en aplicaciones que conectan una experiencia clara con servicios, datos y reglas de negocio bien definidos.</p><p>Actualmente desarrollo software en Nos Planet y apoyo el flujo editorial de la revista INICIB en Open Journal Systems.</p></div>
+    </div></section>
+    <section id="proyectos" class="projects section-space" aria-labelledby="projects-title"><div class="wrap">
+      <div class="section-intro"><h2 id="projects-title">Proyectos seleccionados</h2><p>Del flujo de una mesa a la consistencia de una transferencia: problemas distintos, decisiones visibles.</p></div>
+      <article class="feature" aria-labelledby="mesa-title">
+        <div class="feature-copy"><h3 id="mesa-title">Mesa Viva</h3><p class="kind">Producto web · MVP local</p><p class="lead">Pedidos por QR para restaurantes, desde la carta del cliente hasta cocina, sala y caja.</p><p>El servidor valida precios y disponibilidad. Los pedidos de una visita comparten una sesión de mesa; el pago se registra en una operación transaccional.</p><p class="stack">Next.js · TypeScript · Supabase · PostgreSQL</p><a class="text-link" href="https://github.com/ChethhSito/mesaViva" target="_blank" rel="noopener noreferrer">Explorar repositorio <span aria-hidden="true">↗</span></a></div>
+        <div class="flow" aria-label="Flujo de Mesa Viva: QR de la mesa, pedido validado, cocina y sala, cuenta y pago"><p class="flow-heading">Cómo fluye un pedido</p><ol><li><strong>QR de la mesa</strong><span>El cliente abre la carta</span></li><li><strong>Pedido validado</strong><span>Precio y disponibilidad en servidor</span></li><li><strong>Cocina y sala</strong><span>Estados compartidos en tiempo real</span></li><li><strong>Cuenta y pago</strong><span>Registro transaccional</span></li></ol><small>Next.js / API / Postgres</small></div>
+      </article>
+      <div class="screens" aria-label="Pantallas reales del prototipo local de Mesa Viva"><figure><img src="/project-images/mesa-home.jpg" alt="Portada de Mesa Viva con su propuesta para restaurantes" width="1440" height="900" loading="lazy" /><figcaption>Portada</figcaption></figure><figure><img src="/project-images/mesa-access.jpg" alt="Pantalla de acceso al panel del equipo de Mesa Viva" width="1440" height="900" loading="lazy" /><figcaption>Acceso del equipo</figcaption></figure><figure><img src="/project-images/mesa-mobile.jpg" alt="Portada de Mesa Viva en formato móvil" width="390" height="844" loading="lazy" /><figcaption>Vista móvil</figcaption></figure></div>
+      <article class="feature reverse" aria-labelledby="bank-title">
+        <div class="feature-copy"><h3 id="bank-title">BankCore</h3><p class="kind">Backend · Finanzas simuladas</p><p class="lead">API educativa para cuentas y transferencias internas con foco en consistencia, reintentos y trazabilidad.</p><p>Una transferencia usa una clave de idempotencia para evitar duplicados y deja movimientos de doble partida. Incluye auditoría, documentación OpenAPI y pruebas con PostgreSQL.</p><p class="stack">Java · Spring Boot · PostgreSQL · REST</p><a class="text-link" href="https://github.com/ChethhSito/CoreBanquitos" target="_blank" rel="noopener noreferrer">Explorar repositorio <span aria-hidden="true">↗</span></a></div>
+        <div class="flow" aria-label="Flujo de BankCore: solicitud, control de reintentos, ledger y auditoría"><p class="flow-heading">Qué ocurre en una transferencia</p><ol><li><strong>Solicitud</strong><span>Cuenta, importe y clave única</span></li><li><strong>Control de reintentos</strong><span>La misma operación no se repite</span></li><li><strong>Ledger</strong><span>Débito y crédito de doble partida</span></li><li><strong>Auditoría</strong><span>Registro para seguir la operación</span></li></ol><small>Spring Boot / API / Postgres</small></div>
+      </article>
+      <div class="more-work"><h3>Más trabajo</h3><div class="work-list">{extra.map((project) => <article class="work-row"><div><p class="kind">{project.kind}</p><h4>{project.title}</h4></div><div><p>{project.text}</p><p class="stack">{project.tech}</p></div><div class="row-links">{project.links.map((link) => <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div></article>)}</div><a class="text-link all-work" href="https://github.com/ChethhSito" target="_blank" rel="noopener noreferrer">Ver todos los repositorios en GitHub <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+    <section id="experiencia" class="experience section-space" aria-labelledby="experience-title"><div class="wrap split"><div><h2 id="experience-title">Experiencia</h2><p>Trabajo en producto digital y publicación académica.</p></div><div class="experience-list">
+      <article><h3>Desarrollador full stack</h3><p class="date">Nov 2025 - actualidad</p><p class="place">Nos Planet S.A.C. · Remoto</p><p>Desarrollo de interfaces, APIs, bases de datos y lógica de negocio para un sistema que conecta personas con recicladores. Trabajo móvil con React Native/Expo y Flutter.</p></article>
+      <article><h3>Soporte técnico y OJS</h3><p class="date">Abr 2026 - actualidad</p><p class="place">Revista INICIB · Universidad Ricardo Palma</p><p>Carga de artículos, documentos y metadatos científicos. Preparación y publicación de un número trimestral mediante el flujo editorial de OJS.</p></article>
+    </div></div></section>
+    <section id="herramientas" class="tools section-space" aria-labelledby="tools-title"><div class="wrap split"><div><h2 id="tools-title">Herramientas</h2><p>Las tecnologías cambian según el problema. Estas son las que uso en mis proyectos y trabajo.</p></div><div class="tool-list"><div><h3>Interfaces</h3><p>React, Next.js, TypeScript, JavaScript, React Native/Expo, Flutter</p></div><div><h3>Servicios y datos</h3><p>Node.js, NestJS, Java, Spring Boot, APIs REST, PostgreSQL, MongoDB, Supabase</p></div><div><h3>Proceso</h3><p>Git, GitHub, Figma, Jira, Power BI, OJS</p></div><div><h3>Formación</h3><p>Ingeniería Informática, Universidad Ricardo Palma. Décimo ciclo, tercio superior.</p></div></div></div></section>
+    <section id="contacto" class="contact section-space" aria-labelledby="contact-title"><div class="wrap contact-layout"><div><h2 id="contact-title">Hablemos.</h2><p>Disponible para oportunidades de desarrollo de software y colaboración en productos web o móviles.</p></div><div class="contact-actions"><a class="contact-email" href="mailto:davidhuwork1@gmail.com">davidhuwork1@gmail.com <span aria-hidden="true">↗</span></a><div><a href="https://github.com/ChethhSito" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/juan-david-huayta-ortega-03b05b344/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></div></section>
   </main>
   <footer class="site-footer wrap"><span>© {new Date().getFullYear()} Juan David Huayta Ortega</span><a href="#inicio">Volver arriba ↑</a></footer>
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+      const targets = document.querySelectorAll('.about-layout, .section-intro, .feature-copy, .flow, .screens figure, .more-work, .experience-list article, .tool-list > div, .contact-layout, .portrait');
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      }, { rootMargin: '0px 0px -10% 0px' });
+      targets.forEach((element) => { element.classList.add('reveal-ready'); observer.observe(element); });
+    }
+  </script>
 </Layout>
