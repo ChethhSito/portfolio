@@ -1,13 +1,130 @@
 ---
-import Contenido from '../components/contenido.astro';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/header.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projects = [
+  {
+    category: 'Producto web · Full stack',
+    title: 'Mesa Viva',
+    description: 'Sistema de pedidos por QR para restaurantes: carta por mesa, pedidos y cuenta del cliente junto a un panel para cocina, sala y caja.',
+    detail: 'MVP funcional en entorno local con validación de precios en el servidor y operaciones de pedidos y pagos.',
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL'],
+    links: [{ label: 'Repositorio', url: 'https://github.com/ChethhSito/mesaViva' }],
+    tone: 'mint',
+  },
+  {
+    category: 'Backend · Finanzas simuladas',
+    title: 'BankCore',
+    description: 'API educativa de cuentas y transferencias internas simuladas, enfocada en consistencia contable, idempotencia y trazabilidad.',
+    detail: 'Ledger de doble partida, auditoría, documentación de API y pruebas con PostgreSQL.',
+    stack: ['Java', 'Spring Boot', 'PostgreSQL', 'REST'],
+    links: [{ label: 'Repositorio', url: 'https://github.com/ChethhSito/CoreBanquitos' }],
+    tone: 'blue',
+  },
+  {
+    category: 'Plataforma institucional · Full stack',
+    title: 'Sistema académico SFA',
+    description: 'Portal e intranet para procesos de admisión, matrícula y gestión académica con módulos para distintos roles institucionales.',
+    detail: 'Interfaz modular conectada a una API REST; repositorios separados para frontend y backend.',
+    stack: ['React', 'TypeScript', 'NestJS', 'MongoDB'],
+    links: [
+      { label: 'Frontend', url: 'https://github.com/ChethhSito/SFA-Frontend' },
+      { label: 'Backend', url: 'https://github.com/ChethhSito/SFA-Backend' },
+    ],
+    tone: 'peach',
+  },
+  {
+    category: 'Mapas · Full stack',
+    title: 'Huarique Maps',
+    description: 'Proyecto web para explorar huariques mediante una interfaz de mapas y servicios para usuarios, establecimientos y sugerencias.',
+    detail: 'Interfaz React con Leaflet y backend NestJS organizado por módulos.',
+    stack: ['React', 'Leaflet', 'NestJS', 'MongoDB'],
+    links: [
+      { label: 'Frontend', url: 'https://github.com/ChethhSito/HuariqueMapsFront' },
+      { label: 'Backend', url: 'https://github.com/ChethhSito/HuariqueMapsBack' },
+    ],
+    tone: 'lavender',
+  },
+  {
+    category: 'Seguridad · Análisis estático',
+    title: 'Laboratorio Semgrep',
+    description: 'Aplicación Flask de enseñanza con ejemplos intencionales de SQL injection y XSS, reglas propias y correcciones comparables.',
+    detail: 'Escaneos reproducibles, pruebas funcionales, reporte HTML e integración con GitHub Actions.',
+    stack: ['Python', 'Flask', 'Semgrep', 'GitHub Actions'],
+    links: [{ label: 'Repositorio', url: 'https://github.com/ChethhSito/Seguridad---Grupo3' }],
+    tone: 'yellow',
+  },
+];
+
+const skills = [
+  { group: 'Desarrollo web', list: 'React · Next.js · TypeScript · JavaScript · Node.js · APIs REST' },
+  { group: 'Móvil y datos', list: 'React Native / Expo · Flutter · SQL · PostgreSQL · MongoDB · Supabase' },
+  { group: 'Herramientas', list: 'Git / GitHub · Figma · Jira · Power BI · OJS' },
+];
 ---
 
 <Layout>
-	<Header />
-	<Contenido />
+  <header class="site-header wrap">
+    <a class="brand" href="#inicio" aria-label="Juan David Huayta Ortega, ir al inicio"><span class="brand-mark">JD</span><span>Juan David<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#proyectos">Proyectos</a>
+      <a class="nav-contact" href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Ingeniería Informática · Lima, Perú</p>
+        <h1 id="hero-title">Construyo productos digitales <em>útiles y claros.</em></h1>
+        <p class="hero-lead">Soy <strong>Juan David Huayta Ortega</strong>, estudiante de Ingeniería Informática y desarrollador full stack. Trabajo en aplicaciones web y móviles, desde la interfaz hasta los servicios y datos que las sostienen.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#proyectos">Explorar proyectos <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="mailto:davidhuwork1@gmail.com">Escribirme <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-facts"><span>10.º ciclo · Universidad Ricardo Palma</span><span>Tercio superior</span></div>
+      </div>
+      <div class="portrait-panel">
+        <div class="portrait-frame"><img src="/miImage.png" alt="Retrato de Juan David Huayta Ortega" width="542" height="570" fetchpriority="high" /></div>
+        <div class="portrait-caption"><span>DESARROLLO WEB + MÓVIL</span><span>JDH / 2026</span></div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="intro-section section-pad">
+      <div class="wrap intro-grid">
+        <div><p class="section-kicker">01 / PERFIL</p><h2>Una base técnica con enfoque en personas.</h2></div>
+        <div class="intro-text"><p>Curso el décimo ciclo de Ingeniería Informática en la Universidad Ricardo Palma y pertenezco al tercio superior. Mi experiencia combina desarrollo full stack con soporte técnico para la publicación de una revista científica.</p><p>Me interesa construir soluciones que se puedan explicar, mantener y usar: interfaces cuidadas, APIs bien definidas y flujos de trabajo que respondan a necesidades reales.</p></div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="experience section-pad wrap" aria-labelledby="experience-title">
+      <div class="section-heading"><div><p class="section-kicker">02 / TRAYECTORIA</p><h2 id="experience-title">Experiencia</h2></div><p>Trabajo aplicado en producto digital y operaciones editoriales.</p></div>
+      <div class="experience-list">
+        <article class="experience-item"><div class="experience-date">NOV 2025 — ACTUALIDAD</div><div><h3>Desarrollador full stack</h3><p class="experience-org">Nos Planet S.A.C. · Remoto</p><p>Desarrollo de frontend, backend, bases de datos, APIs REST y lógica de negocio para un sistema que conecta a personas con recicladores de materiales inorgánicos. Trabajo móvil con React Native/Expo y Flutter.</p></div><span class="experience-index">01</span></article>
+        <article class="experience-item"><div class="experience-date">ABR 2026 — ACTUALIDAD</div><div><h3>Soporte técnico y OJS</h3><p class="experience-org">Revista INICIB · Universidad Ricardo Palma</p><p>Carga de artículos, documentos y metadatos científicos en Open Journal Systems. Preparación y publicación de un número trimestral mediante el flujo editorial de OJS.</p></div><span class="experience-index">02</span></article>
+      </div>
+    </section>
+
+    <section id="proyectos" class="projects-section section-pad" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="section-kicker">03 / TRABAJO SELECCIONADO</p><h2 id="projects-title">Proyectos que muestran cómo trabajo</h2></div><p>Una selección de repositorios con distintos problemas, tecnologías y alcances.</p></div>
+        <div class="projects-grid">
+          {projects.map((project, index) => <article class={`project-card tone-${project.tone}`}>
+            <div class="project-visual" aria-hidden="true"><div class="visual-topline"><span>{String(index + 1).padStart(2, '0')} / PROYECTO</span><span>↗</span></div><strong>{project.title}</strong><div class="visual-bars"><i></i><i></i><i></i></div></div>
+            <div class="project-content"><p class="project-category">{project.category}</p><h3>{project.title}</h3><p class="project-description">{project.description}</p><p class="project-detail">{project.detail}</p><ul class="stack-list" aria-label={`Tecnologías de ${project.title}`}>{project.stack.map((item) => <li>{item}</li>)}</ul><div class="project-links">{project.links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div></div>
+          </article>)}
+        </div>
+        <p class="more-projects">Más trabajo y código en <a href="https://github.com/ChethhSito" target="_blank" rel="noopener noreferrer">mi perfil de GitHub <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
+    <section id="habilidades" class="skills-section section-pad wrap" aria-labelledby="skills-title">
+      <div class="section-heading"><div><p class="section-kicker">04 / HERRAMIENTAS</p><h2 id="skills-title">Tecnologías y formación</h2></div></div>
+      <div class="skills-grid"><div class="skill-groups">{skills.map((skill) => <div class="skill-row"><h3>{skill.group}</h3><p>{skill.list}</p></div>)}</div><aside class="education-card"><span>FORMACIÓN</span><h3>Ingeniería Informática</h3><p>Universidad Ricardo Palma · 2022–2027 (previsto)</p><p>Décimo ciclo · tercio superior</p><div class="education-divider"></div><span>IDIOMAS</span><p>Español nativo · Inglés avanzado 6 completado en Británico</p></aside></div>
+    </section>
+
+    <section id="contacto" class="contact-section section-pad"><div class="wrap contact-grid"><div><p class="section-kicker">05 / CONTACTO</p><h2>¿Conversamos sobre tu próximo proyecto?</h2><p>Estoy abierto a oportunidades de desarrollo de software y a colaborar en productos web o móviles.</p></div><div class="contact-links"><a class="contact-email" href="mailto:davidhuwork1@gmail.com">davidhuwork1@gmail.com <span aria-hidden="true">↗</span></a><a href="https://github.com/ChethhSito" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/juan-david-huayta-ortega-03b05b344/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+  <footer class="site-footer wrap"><span>© {new Date().getFullYear()} Juan David Huayta Ortega</span><a href="#inicio">Volver arriba ↑</a></footer>
 </Layout>

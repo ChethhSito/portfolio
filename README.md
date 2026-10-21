@@ -1,46 +1,30 @@
-# Astro Starter Kit: Basics
+# Portafolio de Juan David Huayta Ortega
+
+Sitio personal construido con Astro. Presenta experiencia, formación y proyectos seleccionados para acompañar el CV profesional.
+
+## Desarrollo local
 
 ```sh
-npm create astro@latest -- --template basics
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Abre `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Verificación y despliegue
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run build
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Astro genera el sitio estático en `dist/`. Vercel puede desplegar este repositorio con el framework Astro, el comando `npm run build` y el directorio de salida `dist`.
 
-## 🧞 Commands
+## Contenido
 
-All commands are run from the root of the project, from a terminal:
+- `src/pages/index.astro`: experiencia, proyectos, habilidades y enlaces.
+- `src/styles/global.css`: diseño adaptable a móvil y escritorio.
+- `src/layouts/Layout.astro`: metadatos y estructura de la página.
+- `public/miImage.png`: retrato ya incluido en el repositorio original.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+La información de experiencia y formación se actualizó a partir del CV facilitado por el propietario. Los proyectos enlazan a repositorios públicos revisados; las descripciones reflejan el alcance documentado allí. El CV original no se publica en el sitio.
