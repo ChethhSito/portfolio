@@ -10,7 +10,7 @@ const extra = [
 <Layout>
   <header class="site-header wrap">
     <a class="wordmark" href="#inicio" aria-label="Juan David Huayta Ortega, inicio">Juan David.</a>
-    <nav aria-label="Navegación principal"><a href="#proyectos">Proyectos</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a></nav>
+    <nav aria-label="Navegación principal"><a href="#proyectos">Proyectos</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a><button class="theme-toggle" type="button" aria-label="Activar tema oscuro"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">Tema oscuro</span></button></nav>
   </header>
   <main id="inicio">
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -18,7 +18,7 @@ const extra = [
       <div class="hero-bottom"><p>Desarrollador full stack en Lima. Creo aplicaciones web y móviles con React, NestJS, Flutter y bases de datos.</p><div class="hero-actions"><a class="button primary" href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a><a class="button quiet" href="mailto:davidhuwork1@gmail.com">Escribirme <span aria-hidden="true">↗</span></a></div></div>
     </section>
     <section id="sobre-mi" class="about section-space" aria-labelledby="about-title"><div class="wrap about-layout">
-      <div class="portrait"><img src="/miImage.png" alt="Retrato de Juan David Huayta Ortega" width="542" height="570" loading="lazy" /></div>
+      <div class="portrait"><img src="/miImage.png" alt="Ilustración de Juan David Huayta Ortega" width="1254" height="1254" loading="lazy" /></div>
       <div><h2 id="about-title">Entre la interfaz y lo que la hace funcionar.</h2><p>Curso el décimo ciclo de Ingeniería Informática en la Universidad Ricardo Palma y pertenezco al tercio superior. Trabajo en aplicaciones que conectan una experiencia clara con servicios, datos y reglas de negocio bien definidos.</p><p>Actualmente desarrollo software en Nos Planet y apoyo el flujo editorial de la revista INICIB en Open Journal Systems.</p></div>
     </div></section>
     <section id="proyectos" class="projects section-space" aria-labelledby="projects-title"><div class="wrap">
@@ -43,6 +43,22 @@ const extra = [
   </main>
   <footer class="site-footer wrap"><span>© {new Date().getFullYear()} Juan David Huayta Ortega</span><a href="#inicio">Volver arriba ↑</a></footer>
   <script>
+    const themeButton = document.querySelector('.theme-toggle');
+    const updateThemeButton = () => {
+      if (!themeButton) return;
+      const isDark = document.documentElement.dataset.theme === 'dark';
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isDark ? '#1c1c1a' : '#dadbd5');
+      themeButton.setAttribute('aria-label', isDark ? 'Activar tema claro' : 'Activar tema oscuro');
+      const label = themeButton.querySelector('.theme-label');
+      if (label) label.textContent = isDark ? 'Tema claro' : 'Tema oscuro';
+    };
+    updateThemeButton();
+    themeButton?.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = nextTheme;
+      try { localStorage.setItem('portfolio-theme', nextTheme); } catch {}
+      updateThemeButton();
+    });
     if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
       const targets = document.querySelectorAll('.about-layout, .section-intro, .feature-copy, .flow, .screens figure, .more-work, .experience-list article, .tool-list > div, .contact-layout, .portrait');
       const observer = new IntersectionObserver((entries) => {

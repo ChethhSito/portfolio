@@ -6,7 +6,15 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f2f3f0" />
+    <meta name="theme-color" content="#dadbd5" />
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
+      } catch {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
     <meta name="description" content="Portafolio de Juan David Huayta Ortega, desarrollador full stack y estudiante de Ingeniería Informática en Lima, Perú." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Juan David Huayta Ortega | Desarrollador full stack" />
